@@ -1,0 +1,15 @@
+image:
+  repository: postgres
+  pullPolicy: IfNotPresent
+  tag: ""
+
+service:
+  type: ClusterIP
+  
+postgres:
+  username: postgres
+  password: postgres
+  database: postgres
+  port: 5432
+  
+postgresdatadir: '/postgresdata'
