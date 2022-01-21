@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
   name: pv-hostpath
   labels:
-    postgres.service: postgres
+    type: local
 spec:
   storageClassName: manual
   capacity:
