@@ -26,3 +26,6 @@ spec:
         ports:
         - name: postgres
           containerPort: {{ .Values.postgres.port }}
+        volumeMounts:
+          - mountPath: "/postgresdata"
+            name: pv-hostpath
