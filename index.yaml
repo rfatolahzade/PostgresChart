@@ -3,6 +3,16 @@ entries:
   postgres:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-01-21T09:33:33.983168159Z"
+    description: postgres
+    digest: 9376a15ba94a037201b55dd792b7f5c8b4eba97a22713888e0b2f745df339266
+    name: postgres
+    type: application
+    urls:
+    - https://github.com/rfinland/PostgresChart/releases/download/postgres-0.1.2/postgres-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-01-18T09:00:29.183714709Z"
     description: postgres
     digest: ac03584ff52f68d9ec7694ef52940fd48aef0e5d684ecd2272d0fbd97972ea8b
