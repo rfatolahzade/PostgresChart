@@ -16,8 +16,6 @@ spec:
       - name: postgres
         image: postgres
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
-        resources:
-{{ toYaml .Values.resources | indent 10 }}
         env:
         - name: POSTGRES_PASSWORD
           value: {{ .Values.postgres.password | quote }}
