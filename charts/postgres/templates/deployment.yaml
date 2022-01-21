@@ -16,6 +16,8 @@ spec:
       - name: postgres
         image: postgres
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
         env:
         - name: POSTGRES_PASSWORD
           value: {{ .Values.postgres.password | quote }}
@@ -27,5 +29,9 @@ spec:
         - name: postgres
           containerPort: {{ .Values.postgres.port }}
         volumeMounts:
-          - mountPath: "/postgresdata"
-            name: pv-hostpath
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-data
+      volumes:
+       - name: postgres-data
+         persistentVolumeClaim:
+           claimName: pvc-hostpath
