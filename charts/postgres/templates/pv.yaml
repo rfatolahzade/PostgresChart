@@ -11,9 +11,9 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/postgresdata"
-#     {{ if .Values.postgresdatadir }}
-#       {{ .Values.postgresdatadir | quote }}
-#     {{ else }}
-#       {{ "" }}
-#     {{ end }}
+    path: 
+    {{ if .Values.postgresdatadir }}
+      {{ .Values.postgresdatadir | quote }}
+    {{ else }}
+      {{ "" }}
+    {{ end }}
