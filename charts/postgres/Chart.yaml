@@ -1,6 +1,6 @@
 apiVersion: v2
-name: postgres
-description: postgres 
+name: postgressql
+description: postgressql 
 
 # A chart can be either an 'application' or a 'library' chart.
 #
