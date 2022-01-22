@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgressql
+  name: postgresql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      postgressql.service: postgressql
+      postgresql.service: postgresql
   template:
     metadata:
       labels:
-        postgressql.service: postgressql
+        postgresql.service: postgresql
     spec:
       containers:
-      - name: postgressql
+      - name: postgresql
         image: postgres
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
         - name: POSTGRES_PASSWORD
-          value: {{ .Values.postgressql.password | quote }}
+          value: {{ .Values.postgresql.password | quote }}
         - name: POSTGRES_USER
-          value: {{ .Values.postgressql.username | quote }}
+          value: {{ .Values.postgresql.username | quote }}
         - name: POSTGRES_DB
-          value: {{ .Values.postgressql.database | quote }}
+          value: {{ .Values.postgresql.database | quote }}
         ports:
-        - name: postgressql
-          containerPort: {{ .Values.postgressql.port }}
+        - name: postgresql
+          containerPort: {{ .Values.postgresql.port }}
         volumeMounts:
         - mountPath: "/var/lib/postgresql/data"
-          name: postgressql-data
+          name: postgresql-data
       volumes:
-       - name: postgressql-data
+       - name: postgresql-data
          persistentVolumeClaim:
            claimName: pvc-hostpath

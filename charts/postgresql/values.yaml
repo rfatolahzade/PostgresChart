@@ -6,7 +6,7 @@ image:
 service:
   type: ClusterIP
   
-postgressql:
+postgresql:
   username: postgres
   password: postgres
   database: postgres
