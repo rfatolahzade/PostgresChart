@@ -24,6 +24,16 @@ entries:
   postgressql:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-01-22T12:31:45.742075255Z"
+    description: postgressql
+    digest: 0096cdc290b9172bcbd00bc900d1a4abae718c4c209e9d052c4e75a7789515e5
+    name: postgressql
+    type: application
+    urls:
+    - https://github.com/rfinland/PostgresChart/releases/download/postgressql-0.1.5/postgressql-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-01-22T12:28:32.66079504Z"
     description: postgressql
     digest: a3a0d8a258e1108da44b564c16069c253651986e0a3811f9827dc421abe5b4d9
