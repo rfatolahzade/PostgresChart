@@ -11,5 +11,5 @@ postgresql:
   password: postgres
   database: postgres
   port: 5432
+  postgresdatadir: '/postgresdata'
   
-postgresdatadir: '/postgresdata'
