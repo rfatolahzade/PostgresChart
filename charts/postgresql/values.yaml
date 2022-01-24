@@ -8,7 +8,7 @@ service:
   
 postgresql:
   username: postgres
-  password: postgres
+  password: postgres11
   database: postgres
   port: 5432
   postgresdatadir: '/postgresdata'

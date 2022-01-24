@@ -18,7 +18,10 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
         env:
         - name: POSTGRES_PASSWORD
-          value: {{ .Values.postgresql.password | quote }}
+          valueFrom:
+            secretKeyRef:
+             name: secret-postgresql
+             key: postgresql-password
         - name: POSTGRES_USER
           value: {{ .Values.postgresql.username | quote }}
         - name: POSTGRES_DB
