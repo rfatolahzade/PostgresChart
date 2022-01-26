@@ -15,7 +15,7 @@ spec:
       containers:
       - name: postgresql
         image: postgres
-        imagePullPolicy: {{ .Values.image.pullPolicy | quote }}
+        imagePullPolicy: IfNotPresent
         env:
         - name: POSTGRES_PASSWORD
           valueFrom:
@@ -23,12 +23,12 @@ spec:
              name: secret-postgresql
              key: postgresql-password
         - name: POSTGRES_USER
-          value: {{ .Values.postgresql.username | quote }}
+          value: {{ .Values.username | quote }}
         - name: POSTGRES_DB
-          value: {{ .Values.postgresql.database | quote }}
+          value: {{ .Values.database | quote }}
         ports:
         - name: postgresql
-          containerPort: {{ .Values.postgresql.port }}
+          containerPort: 5432
         volumeMounts:
         - mountPath: "/var/lib/postgresql/data"
           name: postgresql-data
