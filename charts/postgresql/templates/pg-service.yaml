@@ -4,8 +4,11 @@ metadata:
   name: postgresql
 spec:
   ports:
-    - name: "5432"
+    - name: "port"
       port: {{ .Values.expose | default 5432 }}
       targetPort: {{ .Values.expose | default 5432 }}
+{{ if .Values.expose }} 
+  type: LoadBalancer
+{{ end }}
   selector:
     postgresql.service: postgresql
