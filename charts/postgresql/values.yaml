@@ -2,4 +2,4 @@ username: postgres
 password: postgres
 database: postgres
 data_dir: '/PostgresData'
-  
+expose: 5432

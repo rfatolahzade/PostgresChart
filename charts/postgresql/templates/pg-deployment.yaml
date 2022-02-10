@@ -28,7 +28,7 @@ spec:
           value: {{ .Values.database | quote }}
         ports:
         - name: postgresql
-          containerPort: 5432
+          containerPort: {{ .Values.expose | default 5432 }}
         volumeMounts:
         - mountPath: "/var/lib/postgresql/data"
           name: postgresql-data

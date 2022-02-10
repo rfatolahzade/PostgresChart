@@ -5,7 +5,7 @@ metadata:
 spec:
   ports:
     - name: "5432"
-      port: 5432
-      targetPort: 5432
+      port: {{ .Values.expose | default 5432 }}
+      targetPort: {{ .Values.expose | default 5432 }}
   selector:
     postgresql.service: postgresql
